@@ -1,38 +1,46 @@
-import Link from "next/link"
+// app/page.tsx
 
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 
 export default function IndexPage() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Beautifully designed components <br className="hidden sm:inline" />
-          built with Radix UI and Tailwind CSS.
+    <section className="container py-12">
+      <div className="space-y-6 text-center">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          Structura
         </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Plataforma desenvolvida para auxiliar professores universitários a planejarem e
+          acompanharem projetos baseados na metodologia ativa Problem-Based Learning.
         </p>
-      </div>
-      <div className="flex gap-4">
-        <Link
-          href={siteConfig.links.docs}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants()}
-        >
-          Documentation
-        </Link>
-        <Link
-          target="_blank"
-          rel="noreferrer"
-          href={siteConfig.links.github}
-          className={buttonVariants({ variant: "outline" })}
-        >
-          GitHub
-        </Link>
+
+        <div className="max-w-3xl mx-auto text-left space-y-6 pt-6">
+          <div>
+            <h2 className="text-2xl font-semibold">📘 O que é PBL?</h2>
+            <p>
+              A Problem-Based Learning (PBL) é uma
+              metodologia ativa centrada no aluno, que estimula a investigação,
+              o pensamento crítico e a autonomia por meio da resolução de
+              problemas reais.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-semibold">🚀 Como a plataforma ajuda?</h2>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Organize suas turmas e grupos com facilidade.</li>
+              <li>Gerencie cada fase do ciclo PBL com registros claros.</li>
+              <li>Realize avaliações com base em rubricas personalizadas.</li>
+              <li>Gere relatórios de desempenho e participação.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="pt-8">
+          <Button asChild>
+            <a href="/login">Começar Agora</a>
+          </Button>
+        </div>
       </div>
     </section>
   )

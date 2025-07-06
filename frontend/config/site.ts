@@ -1,17 +1,34 @@
+// config/site.ts
+
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Next.js",
+  name: "PBL Platform",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Plataforma para gestão de aprendizagem baseada em problemas (PBL).",
   mainNav: [
     {
-      title: "Home",
+      title: "Início",
       href: "/",
+    },
+    {
+      title: "Dashboard",
+      href: "/dashboard",
+    },
+    {
+      title: "Alunos",
+      href: "/alunos",
+    },
+    {
+      title: "Relatórios",
+      href: "/relatorios",
+    },
+    {
+      title: "Configurações",
+      href: "/configuracoes",
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
     github: "https://github.com/shadcn/ui",
     docs: "https://ui.shadcn.com",
   },
