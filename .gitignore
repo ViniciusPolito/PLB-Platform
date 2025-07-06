@@ -1,0 +1,47 @@
+# Node.js / Next.js (frontend)
+frontend/node_modules/
+frontend/.next/
+frontend/.turbo/
+frontend/.env.local
+frontend/.env
+
+# Python (backend)
+backend/__pycache__/
+backend/*.py[cod]
+backend/.venv/
+backend/env/
+backend/.env
+backend/.mypy_cache/
+backend/.pytest_cache/
+backend/.ruff_cache/
+
+# VSCode / DevContainer
+.vscode/
+.devcontainer/devcontainer.env
+.devcontainer/.env
+
+# Docker
+*.log
+**/*.log
+docker-compose.override.yml
+*.pid
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python cache in root (caso algo escape da pasta)
+__pycache__/
+*.py[cod]
+
+# Logs ou arquivos temporários
+*.sqlite3
+*.db
+.env
+.env.*
+*.bak
+*.tmp
+*.swp
+
+# Pyright (caso use)
+pyrightconfig.json
