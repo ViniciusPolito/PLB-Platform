@@ -5,14 +5,39 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     console.log("Autenticando:", { email, senha });
-    // Aqui você pode chamar sua API de backend (FastAPI) para autenticação
+
+    // 🔗 INTEGRAÇÃO COM BACKEND AQUI:
+    // Exemplo: await fetch("/api/login", { method: "POST", body: JSON.stringify({ email, senha }) })
+
+    // Sucesso simulado
+    // router.push("/dashboard"); // Redireciona para o dashboard
+
+    // Aqui você vai usar apenas para teste
+    const papel = email.includes("prof") ? "professor" : "aluno"
+    localStorage.setItem("papel", papel)
+    console.log("Usuário logado como:", papel)
+
+    // Redirecionamento fictício
+    if (papel === "professor") {
+      window.location.href = "/professor/dashboard"
+    } else {
+      window.location.href = "/aluno/dashboard"
+    }
+
+  };
+
+  const handleCadastro = () => {
+    router.push("/register");
   };
 
   return (
@@ -47,6 +72,20 @@ export default function LoginPage() {
           <Button className="w-full mt-4" onClick={handleLogin}>
             Entrar
           </Button>
+
+          <div className="flex justify-between text-sm mt-2">
+            <button
+              className="text-blue-600 hover:underline"
+              onClick={handleCadastro}
+            >
+              Criar uma conta
+            </button>
+
+            <span className="text-gray-500 cursor-not-allowed">
+              Esqueci minha senha
+            </span>
+            {/* 🔗 Aqui futuramente podemos integrar com backend para recuperação de senha */}
+          </div>
         </CardContent>
       </Card>
     </div>

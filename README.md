@@ -1,6 +1,6 @@
-# Plataforma PBL (Problem-based learning)
+# Structura – Plataforma PBL (Problem-based learning)
 
-Plataforma educacional desenvolvida com o objetivo de aplicar a metodologia de Problem-based learning (PBL), com backend em FastAPI e frontend em Next.js + Tailwind CSS + ShadCN.
+Plataforma educacional desenvolvida com o objetivo de aplicar a metodologia ativa de **Problem-Based Learning (PBL)**, promovendo a aprendizagem a partir da solução de problemas reais. Utiliza **FastAPI** no backend e **Next.js + Tailwind CSS + ShadCN UI** no frontend.
 
 ---
 
@@ -13,54 +13,78 @@ Plataforma educacional desenvolvida com o objetivo de aplicar a metodologia de P
 
 ---
 
-## 🧑‍💻 Como rodar localmente com DevContainer
+## 📁 Estrutura do Projeto
 
-### ✅ Pré-requisitos
-
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- Extensão: **Remote - Containers** (ou Dev Containers)
-
----
-
-### 🧱 Estrutura do Projeto
-
-```
-
+```bash
 .
-├── .devcontainer/
+├── .devcontainer/     → Definição dos containers de desenvolvimento
 │   └── devcontainer.json
-├── backend/         → API FastAPI
-├── frontend/        → App Next.js + ShadCN
+├── backend/           → API FastAPI
+├── frontend/          → App Next.js com ShadCN
 ├── docker-compose.yml
-
 ````
 
 ---
 
-### 🏁 Passo a passo
+## ⚙️ Como rodar o frontend localmente (sem DevContainer)
+
+### ✅ Pré-requisitos
+
+* [Node.js](https://nodejs.org/) (v18 ou superior recomendado)
+* [npm](https://www.npmjs.com/) ou [pnpm](https://pnpm.io/) (v7+)
+
+### 🧪 Passos
+
+1. **Instale as dependências do frontend**
+
+```bash
+cd frontend
+npm install
+```
+
+2. **Rode o servidor de desenvolvimento**
+
+```bash
+npm run dev
+```
+
+3. **Acesse o app:**
+
+[http://localhost:3000](http://localhost:3000)
+
+> 🔧 Obs: Essa opção roda **somente o frontend**, ideal para desenvolvimento rápido da interface. A API pode ser mockada ou configurada depois.
+
+---
+
+## 🐳 Como rodar com DevContainer (modo completo)
+
+### ✅ Pré-requisitos
+
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+* [Visual Studio Code](https://code.visualstudio.com/)
+* Extensão: **Dev Containers** (antiga "Remote - Containers")
+
+### 🧭 Passos
 
 1. **Clone o repositório**
 
 ```bash
-git clone https://github.com/seu-usuario/seu-projeto.git
-cd seu-projeto
-````
+git clone https://github.com/seu-usuario/structura.git
+cd structura
+```
 
-2. **Abra no VS Code e selecione "Reabrir no Container"**
+2. **Abra o VS Code e selecione “Reabrir no Container”**
 
-O VS Code detectará o `.devcontainer` e iniciará os containers `backend` e `frontend`.
+O VS Code detectará o `.devcontainer/` e inicializará os serviços `frontend` e `backend`.
 
-3. **Acesse a aplicação**
+3. **Acesse as aplicações:**
 
 * Frontend: [http://localhost:3000](http://localhost:3000)
 * Backend (API): [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
 
-## 📦 Scripts úteis
-
-Você pode rodar comandos diretamente dentro do container.
+## 🧰 Scripts úteis (dentro dos containers ou localmente)
 
 ### Frontend
 
@@ -78,6 +102,20 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 ---
 
+## 🧠 Sobre a plataforma
+
+A Structura foi criada para apoiar professores e instituições na **implementação da metodologia PBL**, oferecendo ferramentas para organizar:
+
+* Problemas e desafios por turma
+* Acompanhamento de grupos de alunos
+* Avaliação com base em critérios e rubricas
+* Relatórios e feedback contínuo
+
+---
+
 ## 👨‍🔬 Autor
 
-Vinicius Polito
+**Vinicius Polito**
+Desenvolvedor Fullstack | Engenheiro de Dados | IA aplicada à educação
+
+---
